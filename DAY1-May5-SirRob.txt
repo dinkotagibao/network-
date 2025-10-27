@@ -172,7 +172,7 @@ config t
 ip routing
 ip dhcp pool CAMERA6
 host 10.11.50.6 255.255.255.0
-client-identifier abcd.1234.cafb
+client-identifier 001a.0709.c25b
 ip dhcp pool CAMERA8
 host 10.11.50.8 255.255.255.0
 client-identifier abcd.1234.cafb
@@ -215,7 +215,7 @@ dial-peer voice 3 pots
    destination-pattern 1102
    port 0/0/2
 dial-peer voice 4 pots
-   destination-pattern 1103
+   destination-pattern 1194
    port 0/0/3
 end
 
@@ -246,18 +246,18 @@ ephone-dn 7
 ephone-dn 8
   number 1188
  ephone-dn 9
-   number 1199
+   number 1113
 ephone-dn 10
- number 1198
+ number 1115
 Ephone 1
-  Mac-address cafe.face.baba
+  Mac-address ccd8.c1fb.10a9
   type 8945
-  button 1:8 2:7 3:6 4:5
+  button 1:8 2:7 3:6 4:9
   restart
 Ephone 2
-  Mac-address fafa.caca.baba
+  Mac-address ccd8.c1fb.09ff
   type 8945
-  button 1:4 2:3 3:2 4:1
+  button 1:4 2:3 3:2 4:10
   restart  
 end
 
@@ -284,10 +284,10 @@ exit
 
 !OUTGOING CALL FROM CUCM TO OTHER CUCM.
 configure terminal
- dial-peer voice 11 Voip
- destination-pattern 11..
- session target ipv4:10.11.100.8
- codec g711ULAW
+ !dial-peer voice 11 Voip
+ !destination-pattern 11..
+ !session target ipv4:10.11.100.8
+ !codec g711ULAW
   dial-peer voice 12 Voip
   destination-pattern 12..
   session target ipv4:10.12.100.8
@@ -643,4 +643,5 @@ exit
           
 sip-ua
 sip-server ipv4:192.168.k.1
+
 
